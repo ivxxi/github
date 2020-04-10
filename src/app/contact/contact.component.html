@@ -1,0 +1,27 @@
+
+<div class="container">
+<form (ngSubmit)="processForm()">
+  <div class="form-group">
+    <label class="label">name</label>
+    <input type="text" class="form-control" name="Name" id="Name" placeholder="Name" [(ngModel)]="name" required minlength="3" #nameInput="ngModel">
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+      <p>name is required</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="Enter email" [(ngModel)]="email" required  #emailInput="ngModel">
+    <div [hidden]="emailInput.valid || emailInput.pristine" class="alert alert-danger">
+      <p>email is required</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="">your message</label>
+    <textarea class="form-control textarea" rows="3" name="Message" id="Message" placeholder="Message" [(ngModel)]="message" required  #messageInput="ngModel"></textarea>
+    <div [hidden]="messageInput.valid || messageInput.pristine" class="alert alert-danger">
+      <p>quote is required</p>
+    </div>
+  </div>
+  <button id="send" type="submit" class="btn btn-primary">send</button>
+</form>
+</div>
