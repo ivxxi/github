@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileService } from '../profile/profile.service';
 
 @Component({
   selector: 'app-search-page',
@@ -7,9 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPageComponent implements OnInit {
 
-  constructor() { }
+  profile: any = [];
+  repos: any = [];
+  username: string;
+  isCollapsed: boolean= true;
+  isCollapsed1: boolean= true;
 
-  ngOnInit(): void {
-  }
+   constructor( private profileService: ProfileService) {
+
+   }
+   searchGithub(){
+     this.profileService.updateProfile(this.username);
+     this.profileService.getProfileInfo().subscribe(profile=>{
+       console.log(profile);
+       this.profile = profile;
+     });
+     this.profileService.getProfileRepos().subscribe(repos=>{
+       console.log(repos);
+       this.repos = repos;
+     });
+   }
+   toggleCollapse(){
+     this.isCollapsed = !this.isCollapsed;
+   }
+   toggleCollapse1(){
+     this.isCollapsed1 = !this.isCollapsed1;
+   }
+   ngOnInit() {
+   }
 
 }

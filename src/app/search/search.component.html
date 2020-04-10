@@ -1,1 +1,11 @@
-<p>search works!</p>
+<div class = "search">
+  <img src="{{github.avatar_url}}">
+  <br>
+  <p>Name: {{github.name}}</p>
+  <p>Username: @{{github.login}}</p>
+  <p>Followers: {{github.followers}}</p>
+  <p>{{"Number of those following" | transform }}: {{github.following}}</p>
+  <a href="{{github.html_url}}" target="_blank" >Reposotiries</a>
+  <br>
+  <button><a href='/search-page' routerLinkActive='active'>Search Github</a></button>
+</div>

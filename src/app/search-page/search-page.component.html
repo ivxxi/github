@@ -1,3 +1,58 @@
 <div id="searchpage">
-  
+  <div class="container" id="searchtext">
+  <form action="">
+      <input class="form-control" type="text" placeholder="enter Github username" [(ngModel)]="username" name="username"
+      (keyup)="searchGithub()" autocomplete="off" >
+  </form>
+  <button (click)="toggleCollapse()" class="btn1" id="searchbutton">Search</button>
+  <div *ngIf="username.length>0 && !isCollapsed">
+      <div class="panel panel-default">
+          <div class="panel-heading" appHighlight>
+            <h3>profile name: {{profile.name}} <span style="color:red;font-weight:bold">(@{{profile.login}})</span></h3>
+              <br>
+              <span *ngIf="profile.company">Works at: {{profile.company}}</span>
+              <br>
+              <span *ngIf="profile.location">Location: {{profile.location}}</span>
+          </div>
+          <br>
+          <div class="panel-body" >
+              <div class="row">
+                  <div class="col-md-6">
+                      <img src="{{profile.avatar_url}}" alt="user profile" class="img-circle img-responsive">
+                  </div>
+                  <br>
+                  <div class="col-md-6" id="list">
+                      <ul class="list-group">
+                          <li class="list-group-item" *ngIf="profile.bio">Bio: {{profile.bio}}</li>
+                          <li class="list-group-item" *ngIf="profile.company">Company name: {{profile.company}}</li>
+                          <li class="list-group-item" id="gitlist">Member since: {{profile.created_at | date}}</li>
+                          <li class="list-group-item" *ngIf="profile.blog">Website: <a href={{profile.blog}} target="_blank">{{profile.blog}}</a></li>
+                          <li class="list-group-item" *ngIf="profile.email">Email: <a href="emailto:{{profile.email}}">{{profile.email}}</a></li>
+                      </ul>
+                  </div>
+                  <br>
+                  <div class="col-md-6">
+                      <span class="label label-default">{{profile.followers}} Followers</span><br>
+                      <span class="label label-primary">{{profile.following}} Following</span><br>
+                      <span class="label label-info">{{profile.public_repos}} Public repos</span><br>
+                      <span class="label label-warning">{{profile.public_gists}} Public gists</span><br>
+                  </div>
+                  <div class="col-md-6">
+                      <button><a href="{{profile.html_url}}" target="_blank" id="githubbutton">View Github Profile </a></button>
+                  </div>
+              </div>
+          </div>
+          <button class="btn2" (click)="toggleCollapse1()" id="viewbutton" >View {{profile.name}} repositories</button>
+          <div *ngIf="!isCollapsed1">
+              <div *ngFor="let repo of repos; let i=index" id="repos">
+                  <div id="gitdetails">
+                      <h5>{{repo.name}}</h5>
+                      <h6>{{repo.description}}</h6>
+                      <a href="{{repo.html_url}}" target="_blank">View Repo</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 </div>
