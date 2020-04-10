@@ -1,4 +1,35 @@
-# Github
+# Github Search
+
+[https://ivxxi.github.io/_____]
+
+github username search website, Date of current version
+
+By {crystal alice}
+##Description
+
+This website allows you to search Github users using their usernames and view their profiles repositories
+
+##Setup/Installation Requirements
+To access this project, you will need to access it from github then clone it. Then run 'git clone https://github.com/ivxxi/github' on your terminal
+
+
+##Known Bugs
+currently no know bugs
+
+##Technologies Used
+1. Angular
+2. Typescript
+3. Html
+4. CSS
+5. Bootstrap
+
+
+##Support and contact details
+crystalalice21@gmail.com
+
+##License
+MIT license Copyright (c) 2020 {crystal alice}
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
 
