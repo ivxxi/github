@@ -13,8 +13,8 @@ This website allows you to search Github users using their usernames and view th
 To access this project, you will need to access it from github then clone it. Then run 'git clone https://github.com/ivxxi/github' on your terminal
 
 
-##Known Bugs
-background images for all pages are not showing
+##Known Bugs 
+background images for all pages are not showing after deployment
 
 ##Technologies Used
 1. Angular
