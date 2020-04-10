@@ -11,9 +11,12 @@ import { GithubHttpService } from '../github-http/github-http.service';
   providers:[GithubHttpService],
 })
 export class SearchComponent implements OnInit {
-  github:GithubClass ;
+  github:GithubClass;
 
-  constructor(private http:HttpClient, private githubService: GithubHttpService, ) { }
+  constructor(private http:HttpClient, private githubService: GithubHttpService, )
+  {
+   }
+
   ngOnInit() {
     this.githubService.githubRequest()
     this.github=this.githubService.github
