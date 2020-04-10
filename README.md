@@ -1,6 +1,6 @@
 # Github Search
 
-[https://ivxxi.github.io/_____]
+[https://ivxxi.github.io/github/]
 
 github username search website, Date of current version
 
