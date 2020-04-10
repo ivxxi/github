@@ -14,7 +14,7 @@ To access this project, you will need to access it from github then clone it. Th
 
 
 ##Known Bugs
-currently no know bugs
+background images for all pages are not showing
 
 ##Technologies Used
 1. Angular
